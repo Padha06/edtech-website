@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf6f0;
+  --foreground: #0e1a28;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --color-navy-50: #f2f6fa;
+  --color-navy-100: #e1eaf2;
+  --color-navy-200: #c3d4e4;
+  --color-navy-300: #99b4ce;
+  --color-navy-400: #6a8db1;
+  --color-navy-500: #4a7096;
+  --color-navy-600: #385a7c;
+  --color-navy-700: #2d4966;
+  --color-navy-800: #223850;
+  --color-navy-900: #18293c;
+  --color-navy-950: #0e1a28;
+
+  --color-copper-50: #fbf3ec;
+  --color-copper-100: #f6e3d3;
+  --color-copper-200: #ebc6a8;
+  --color-copper-300: #dda073;
+  --color-copper-400: #cc7a48;
+  --color-copper-500: #b85f2f;
+  --color-copper-600: #a04a22;
+  --color-copper-700: #7e3a1c;
+  --color-copper-800: #642e18;
+  --color-copper-900: #4e2414;
+  --color-copper-950: #2b1107;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: #a04a22;
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid #a04a22;
+  outline-offset: 2px;
+}
+
+/* Subtle grid backdrop */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(74 112 150 / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(74 112 150 / 0.08) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 55%, transparent 100%);
+}
+
+/* Gentle float for hero decoration */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float {
+    animation: none;
+  }
 }
