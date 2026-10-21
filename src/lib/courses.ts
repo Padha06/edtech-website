@@ -19,6 +19,7 @@ export type Course = {
   rating: number;
   students: string;
   accent: string;
+  image: string;
   icon: "briefcase" | "chart" | "calc" | "line" | "megaphone" | "crown";
   outcomes: string[];
   highlights: string[];
@@ -41,6 +42,7 @@ export const courses: Course[] = [
     rating: 4.8,
     students: "12,400+",
     accent: "from-navy-700 to-navy-900",
+    image: "/images/courses/bba.png",
     icon: "briefcase",
     outcomes: [
       "Core concepts of management, accounting and business law",
@@ -78,6 +80,7 @@ export const courses: Course[] = [
     rating: 4.9,
     students: "18,900+",
     accent: "from-navy-700 to-navy-900",
+    image: "/images/courses/mba.png",
     icon: "chart",
     outcomes: [
       "Strategic management and corporate finance",
@@ -115,6 +118,7 @@ export const courses: Course[] = [
     rating: 4.7,
     students: "9,800+",
     accent: "from-navy-700 to-navy-900",
+    image: "/images/courses/bcom.jpg",
     icon: "calc",
     outcomes: [
       "Financial and cost accounting",
@@ -151,6 +155,7 @@ export const courses: Course[] = [
     rating: 4.8,
     students: "6,500+",
     accent: "from-navy-700 to-navy-900",
+    image: "/images/courses/mcom.jpg",
     icon: "line",
     outcomes: [
       "Advanced financial management",
@@ -186,6 +191,7 @@ export const courses: Course[] = [
     rating: 4.7,
     students: "7,200+",
     accent: "from-navy-700 to-navy-900",
+    image: "/images/courses/bba-digital-marketing.jpg",
     icon: "megaphone",
     outcomes: [
       "SEO, SEM and social media marketing",
@@ -222,6 +228,7 @@ export const courses: Course[] = [
     rating: 4.9,
     students: "3,100+",
     accent: "from-navy-700 to-navy-900",
+    image: "/images/courses/emba.jpg",
     icon: "crown",
     outcomes: [
       "Leadership and change management",

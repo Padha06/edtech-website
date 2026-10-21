@@ -1,5 +1,6 @@
 ﻿import { Star } from "lucide-react";
 import { SectionHeading } from "./section";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -7,18 +8,21 @@ const testimonials = [
       "I completed my BBA entirely online while working a part-time job. The recorded lectures and weekend live sessions made it possible.",
     name: "Priya Sharma",
     role: "BBA Graduate · Mumbai",
+    avatar: "/images/avatars/priya-sharma.jpg",
   },
   {
     quote:
       "The university options and EMI plans were the reason I finally enrolled. The placement cell helped me land my first internship in six months.",
     name: "Rahul Verma",
     role: "MBA Student · Delhi",
+    avatar: "/images/avatars/rahul-verma.jpg",
   },
   {
     quote:
       "As a working professional, the weekend EMBA fit my schedule perfectly. The faculty and mentorship were genuinely senior and experienced.",
     name: "Ananya Iyer",
     role: "EMBA Student · Bengaluru",
+    avatar: "/images/avatars/ananya-iyer.jpg",
   },
 ];
 
@@ -44,9 +48,18 @@ export function Testimonials() {
               <blockquote className="mt-4 flex-1 text-sm leading-7 text-slate-700">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
-              <figcaption className="mt-6 border-t border-slate-200 pt-4">
-                <p className="font-semibold text-slate-900">{t.name}</p>
-                <p className="text-sm text-slate-500">{t.role}</p>
+              <figcaption className="mt-6 flex items-center gap-3 border-t border-slate-200 pt-4">
+                <Image
+                  src={t.avatar}
+                  alt={t.name}
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-slate-900">{t.name}</p>
+                  <p className="text-sm text-slate-500">{t.role}</p>
+                </div>
               </figcaption>
             </figure>
           ))}

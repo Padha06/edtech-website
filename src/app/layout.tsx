@@ -18,11 +18,22 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://edtech-website-nine.vercel.app"),
   title: {
     default: `${site.name} — Online UG & PG Degrees`,
     template: `%s — ${site.name}`,
   },
   description: site.description,
+  icons: {
+    icon: "/favicon.jpg",
+    apple: "/favicon.jpg",
+  },
+  openGraph: {
+    title: `${site.name} — Online UG & PG Degrees`,
+    description: site.description,
+    images: ["/og-image.jpg"],
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {

@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowRight, GraduationCap, Play, Star } from "lucide-react";
 import { site } from "@/lib/site";
@@ -94,7 +95,16 @@ export function Hero() {
         >
           <div className="relative mx-auto max-w-md">
             <div className="rounded-3xl border border-white/60 bg-white/80 p-4 shadow-2xl shadow-copper-500/10 backdrop-blur">
-              <div className="relative aspect-video overflow-hidden rounded-2xl bg-gradient-to-br from-navy-700 via-navy-800 to-navy-950">
+              <div className="relative aspect-video overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/hero/hero.jpg"
+                  alt="Student learning online"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 <div className="absolute inset-0 grid place-items-center">
                   <span className="grid h-16 w-16 place-items-center rounded-full bg-white/90 text-copper-600 shadow-lg">
                     <Play className="ml-0.5 h-7 w-7 fill-current" />

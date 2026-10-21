@@ -1,5 +1,4 @@
-import { Building2 } from "lucide-react";
-import { universities } from "@/lib/courses";
+import Image from "next/image";
 
 export function LogoCloud() {
   return (
@@ -8,13 +7,14 @@ export function LogoCloud() {
         <p className="text-center text-sm font-medium uppercase tracking-wider text-slate-600">
           Learn from recognised universities across India
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-          {universities.map((u) => (
-            <div key={u} className="flex items-center gap-2 text-slate-600">
-              <Building2 className="h-5 w-5 text-copper-600" />
-              <span className="font-display text-base font-semibold">{u}</span>
-            </div>
-          ))}
+        <div className="mt-8 flex justify-center">
+          <Image
+            src="/images/university-logo.jpg"
+            alt="Partner universities across India"
+            width={900}
+            height={120}
+            className="h-auto w-full max-w-4xl object-contain"
+          />
         </div>
       </div>
     </section>

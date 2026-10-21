@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   ArrowLeft,
@@ -47,6 +48,18 @@ export default async function CoursePage({ params }: PageProps<"/courses/[slug]"
         >
           <ArrowLeft className="h-4 w-4" /> All courses
         </Link>
+
+        <div className="relative mt-6 h-48 overflow-hidden rounded-2xl sm:h-64">
+          <Image
+            src="/images/banners/course-detail-banner.jpg"
+            alt={course.title}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        </div>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
